@@ -6,10 +6,11 @@
         {
             //Add student to context
             db.Students.Add(p);
+            db.SaveChanges();
             return p;
         }
 
-        public static List<Student> GetStudents(SchoolContext context)  // <--------  take a look at this
+        public static List<Student> GetStudents(SchoolContext context)  
         {
             return (from s in context.Students
                     select s).ToList();

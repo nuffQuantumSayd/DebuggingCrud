@@ -30,6 +30,9 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Add(p, context);
+
+                
+                
                 ViewData["Message"] = $"{p.Name} was added!";
                 return View();
             }

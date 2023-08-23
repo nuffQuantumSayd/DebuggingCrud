@@ -1,4 +1,6 @@
-﻿namespace CPW219_CRUD_Troubleshooting.Models
+﻿using System.Linq;
+
+namespace CPW219_CRUD_Troubleshooting.Models
 {
     public static class StudentDb
     {
@@ -22,6 +24,11 @@
                             .Students
                             .Where(s => s.StudentId == id)
                             .Single();
+
+            //Student p2 = (from s in context.Students
+            //              where s.StudentId == id
+            //              select s).SingleOrDefault();
+
             return p2;
         }
 

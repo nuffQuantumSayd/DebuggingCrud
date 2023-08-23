@@ -32,6 +32,7 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
                 StudentDb.Add(p, context);
                 
                 ViewData["Message"] = $"{p.Name} was added!";
+
                 return RedirectToAction("Index", "Home");
             }
 

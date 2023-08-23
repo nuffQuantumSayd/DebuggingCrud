@@ -12,10 +12,11 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
             context = dbContext;
         }
 
+
         public IActionResult Index()    // <------- take a look at this
         {
             List<Student> products = StudentDb.GetStudents(context);
-            return View();
+            return View(products);
         }
 
         public IActionResult Create()

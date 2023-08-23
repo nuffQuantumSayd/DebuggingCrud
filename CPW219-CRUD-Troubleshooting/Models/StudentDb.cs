@@ -9,7 +9,7 @@
             return p;
         }
 
-        public static List<Student> GetStudents(SchoolContext context)
+        public static List<Student> GetStudents(SchoolContext context)  // <--------  take a look at this
         {
             return (from s in context.Students
                     select s).ToList();

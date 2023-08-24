@@ -38,7 +38,7 @@ namespace CPW219_CRUD_Troubleshooting.Models
 
         public static void Update(SchoolContext context, Student p)
         {
-            //Mark the object as deleted
+            
             context.Students.Update(p);
             
 

@@ -1,4 +1,6 @@
-﻿namespace CPW219_CRUD_Troubleshooting.Models
+﻿using System.Linq;
+
+namespace CPW219_CRUD_Troubleshooting.Models
 {
     public static class StudentDb
     {
@@ -6,10 +8,11 @@
         {
             //Add student to context
             db.Students.Add(p);
+            db.SaveChanges();
             return p;
         }
 
-        public static List<Student> GetStudents(SchoolContext context)  // <--------  take a look at this
+        public static List<Student> GetStudents(SchoolContext context)  
         {
             return (from s in context.Students
                     select s).ToList();
@@ -26,13 +29,15 @@
 
         public static void Delete(SchoolContext context, Student p)
         {
-            context.Students.Update(p);
+            context.Students.Remove(p);
+            context.SaveChanges();
         }
 
         public static void Update(SchoolContext context, Student p)
         {
-            //Mark the object as deleted
-            context.Students.Remove(p);
+            
+            context.Students.Update(p);
+            
 
             //Send delete query to database
             context.SaveChanges();

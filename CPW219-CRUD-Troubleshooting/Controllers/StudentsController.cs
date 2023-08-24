@@ -12,10 +12,11 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
             context = dbContext;
         }
 
+
         public IActionResult Index()    // <------- take a look at this
         {
             List<Student> products = StudentDb.GetStudents(context);
-            return View();
+            return View(products);
         }
 
         public IActionResult Create()
@@ -29,7 +30,9 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
             if (ModelState.IsValid)
             {
                 StudentDb.Add(p, context);
+                
                 ViewData["Message"] = $"{p.Name} was added!";
+
                 return View();
             }
 
@@ -41,9 +44,9 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
         {
             //get the product by id
             Student p = StudentDb.GetStudent(context, id);
-
+            
             //show it on web page
-            return View();
+            return View(p);
         }
 
         [HttpPost]

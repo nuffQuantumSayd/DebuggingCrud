@@ -39,7 +39,7 @@ namespace CPW219_CRUD_Troubleshooting.Migrations
 
                     b.HasKey("StudentId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 #pragma warning restore 612, 618
         }

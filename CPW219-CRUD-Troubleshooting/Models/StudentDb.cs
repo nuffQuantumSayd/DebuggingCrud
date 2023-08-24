@@ -24,9 +24,6 @@ namespace CPW219_CRUD_Troubleshooting.Models
                             .Students
                             .Where(s => s.StudentId == id)
                             .Single();
-
-            
-
             return p2;
         }
 

@@ -33,7 +33,7 @@ namespace CPW219_CRUD_Troubleshooting.Controllers
                 
                 ViewData["Message"] = $"{p.Name} was added!";
 
-                return RedirectToAction("Index", "Home");
+                return View();
             }
 
             //Show web page with errors

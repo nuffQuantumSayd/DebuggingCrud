@@ -4,6 +4,13 @@
     ViewData["Title"] = "Edit";
 }
 
+@if (ViewData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @ViewData["Message"]
+    </div>    
+}
+
 <h1>Edit</h1>
 
 <h4>Student</h4>
